@@ -1,6 +1,6 @@
 # Rust-sort
 
-> A JSON sort implementation for learning Rust
+> A sort implementation for learning Rust
 
 ## Usage
 
