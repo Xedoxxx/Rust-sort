@@ -11,7 +11,7 @@ fn action(text: &str, mut action: impl FnMut()) {
 #[test]
 fn array_sort() {
     let mut rand = rand::rng();
-    let mut array = [0; 10];
+    let mut array: &mut [i32] = &mut [0; 10];
     
     for i in 0..10 {
         array[i] = rand.random_range(0..=100);
@@ -19,7 +19,7 @@ fn array_sort() {
     let array_ref = &mut array;
     action("ARRAY SORT TEST", || {
         println!("Origin array: {:?}", array_ref);
-        sort_array(array_ref, |v1, v2| v1 > v2);
+        sort_array::<i32>(array_ref, |v1, v2| v1 > v2);
         println!("Sorted array: {:?}", array_ref);
     });
 
